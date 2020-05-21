@@ -1,0 +1,37 @@
+{
+  "npmScope": "customlayout",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "workspaceLayout": {
+    "appsDir": "packages",
+    "libsDir": "packages"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "ngapp": {
+      "tags": []
+    },
+    "ngapp-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ngapp"]
+    },
+    "ui": {
+      "tags": []
+    }
+  }
+}
